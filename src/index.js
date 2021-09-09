@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { ReactReduxFirebaseProvider } from "react-redux-firebase";
 import { createFirestoreInstance } from "redux-firestore";
 import firebase from "./firebase";
+import rootReducer from "./reducers/index";
 
 const store = createStore(rootReducer);
 
