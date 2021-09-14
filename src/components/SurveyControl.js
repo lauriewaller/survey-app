@@ -14,15 +14,35 @@ class SurveyControl extends React.Component {
     };
   }
 
-  //<Link to="/newSurveyForm">
-
   render() {
-    return (
-      <React.Fragment>
-        <Link to="/new-survey">Create New Survey</Link>
-      </React.Fragment>
-    );
+    const auth = this.props.firebase.auth();
+
+    if (!isLoaded(auth)) {
+      return (
+        <React.Fragment>
+          <h1>Loading...</h1>
+        </React.Fragment>
+      );
+    }
+
+    if (isLoaded(auth) && auth.currentUser == null) {
+      return (
+        <React.Fragment>
+          <SurveyList> </SurveyList>
+        </React.Fragment>
+      );
+    }
+
+    if (isLoaded(auth) && auth.current != null) {
+      return (
+        <React.Fragment>
+          <SurveyList> </SurveyList>
+          <Link to="/new-survey">Create New Survey</Link>
+          <Link to="/signin">Sign Up / Sign In / Sign Out</Link>
+        </React.Fragment>
+      );
+    }
   }
 }
 
-export default SurveyControl;
+export default withFirestore(SurveyControl);
