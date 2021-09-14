@@ -5,7 +5,7 @@ function ReusableForm(props) {
   return (
     <React.Fragment>
       <form onSubmit={props.formSubmissionHandler}>
-        <input type="text" title="title" placeholder="Survey Title" />
+        <input type="text" name="title" placeholder="Survey Title" />
         <input
           type="text"
           name="description"
