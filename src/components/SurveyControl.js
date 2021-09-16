@@ -13,13 +13,6 @@ import { Link } from "react-router-dom";
 import Survey from "./Survey";
 
 function SurveyControl() {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     selectedSurvey: null,
-  //   };
-  // }
-
   // const auth = this.props.firebase.auth();
 
   // if (!isLoaded(auth)) {
@@ -60,9 +53,6 @@ function SurveyControl() {
     );
   }
 }
-
-//{`/surveydetail/${survey.id}`}
-// "/surveydetail"
 
 //     return (
 //       <React.Fragment>
