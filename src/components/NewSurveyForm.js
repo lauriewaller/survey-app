@@ -2,11 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import ReusableForm from "./ReusableForm";
 import { useFirestore } from "react-redux-firebase";
-import { useHistory } from "react-router";
 
 function NewSurveyForm(props) {
-  const history = useHistory();
-
   const firestore = useFirestore();
   return (
     <React.Fragment>
@@ -19,9 +16,7 @@ function NewSurveyForm(props) {
 
   function addSurveyToFirestore(event) {
     event.preventDefault();
-    // props.onNewSurveyCreation();
-    // props.history.push("/surveycontrol");
-    history.push("/");
+    props.history.push("/");
     return firestore.collection("surveys").add({
       title: event.target.title.value,
       description: event.target.description.value,
