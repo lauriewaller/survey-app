@@ -12,7 +12,6 @@ function SurveyDetail(props) {
   );
 
   console.log("survey = " + JSON.stringify(survey));
-  console.log("survey title = " + survey.title);
 
   return (
     <React.Fragment>
