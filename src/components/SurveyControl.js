@@ -27,7 +27,7 @@ function SurveyControl() {
         <hr />
         {surveys.map((survey) => {
           return (
-            <>
+            <div key={survey.id}>
               <Survey
                 // whenSurveyClicked={props.onSurveySelection}
                 title={survey.title}
@@ -36,15 +36,14 @@ function SurveyControl() {
                 questionTwo={survey.questionTwo}
                 questionThree={survey.questionThree}
                 id={survey.id}
-                key={survey.id}
+                // key={survey.id}
               />
               <Link to={`/surveydetail/${survey.id}`}>View Survey</Link>
-            </>
+            </div>
           );
         })}
       </React.Fragment>
     );
-    // If the surveys aren't loaded yet, our fragment will return a "Loading..." message.
   } else {
     return (
       <React.Fragment>
